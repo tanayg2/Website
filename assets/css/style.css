@@ -613,6 +613,10 @@ section {
 /*--------------------------------------------------------------
 # My Resume
 --------------------------------------------------------------*/
+#resume-section-title {
+  color: #3b434a;
+}
+
 .resume .resume-title {
   font-size: 26px;
   font-weight: 700;
