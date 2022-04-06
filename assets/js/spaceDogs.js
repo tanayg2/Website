@@ -1,7 +1,7 @@
 var svg;
 var width, height, innerHeight, innerWidth;
 var margin = { top: 50, right: 60, bottom: 60, left: 100 };
-var dogs, flights;
+var flights;
 var flightsToDraw;
 var rocket;
 var startYear, endYear;
@@ -19,8 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     innerHeight = height - margin.top - margin.bottom;
 
     //Load both files before doing anything else
-    Promise.all([d3.csv('data/Dogs-Database.csv'),
-                d3.csv('data/Flights-Database.csv', function(d) {
+    Promise.all([d3.csv('../data/Flights-Database.csv', function(d) {
                     var altitude = d["Altitude"];
                     if (isNaN(parseInt(altitude))) {
                         if (altitude === "orbital") {
@@ -44,8 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     };
                 })])
                  .then(function(values){
-                    dogs = values[0];
-                    flights = values[1];
+                    flights = values[0];
 
                     flightsToDraw = queryDataset(1960, 1975);
                     drawViz();
