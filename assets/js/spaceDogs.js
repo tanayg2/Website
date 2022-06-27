@@ -1,7 +1,7 @@
 var svg;
 var width, height, innerHeight, innerWidth;
 var margin = { top: 50, right: 60, bottom: 60, left: 100 };
-var flights;
+var dogs, flights;
 var flightsToDraw;
 var rocket;
 var startYear, endYear;
@@ -43,7 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     };
                 })])
                  .then(function(values){
-                    flights = values[0];
+                    dogs = values[0];
+                    flights = values[1];
 
                     flightsToDraw = queryDataset(1960, 1975);
                     drawViz();
